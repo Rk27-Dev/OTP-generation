@@ -1,0 +1,64 @@
+{% extends 'registration/base.html' %}
+{% block content %}
+    <script>
+
+            // Function to check Whether both passwords
+            // is same or not.
+            function checkPassword(form) {
+                password = form.password.value;
+                conform_password = form.password2.value;
+
+                // If password not entered
+                if (password == '')
+                    alert ("Please enter Password");
+
+                // If confirm password not entered
+                else if (conform_password == '')
+                    alert ("Please enter confirm password");
+
+                // If Not same return False.
+                else if (password != conform_password) {
+                    alert ("\nPassword did not match: Please try again...")
+                    return false;
+                }
+                // If same return True.
+                else{
+                    alert("Password Match: Welcome to GeeksforGeeks!")
+                    return true;
+                }
+            }
+        </script>
+    <body>
+     <p id="demo">welcome to signup-page</p>
+
+
+   <form method="post" action=" ">
+    {% csrf_token %}
+    <label for="name">name</label>
+    <input type="text" name="name"><br>
+
+      <label for="Contact_no">Contact_no</label>
+    <input type="text" name="Contact_no"   title="must be 10 nos" ><br>
+
+    <label for="username">username</label>
+    <input type="text" name="username">
+ <br>
+       <label for="password">password</label>
+   <input type="password" placeholder="Password" id="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"  title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" required>
+    <br>
+       <label for="conform_password">conform_password</label>
+        <input type="password" placeholder="conform_password" id="conform_password" required>
+{#        password:<input type="password" placeholder="Password" id="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" required>#}
+{#        confirm_password:<input type="password" placeholder="Confirm Password" id="confirm_password"  pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" id="ps1"required>#}
+    <br> <label for="otps">otps</label>
+    <input type="text" name="otps">
+    <br>
+       <input type="submit" value="submit">
+{#       <button onclick="window.location.href='./otp'">Continue</button>#}
+{#       <a href="./otp" class="button">OTP</a>#}
+</form></body>
+{% endblock %}
+
+
+
+

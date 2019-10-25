@@ -1,0 +1,16 @@
+{% extends 'registration/base.html' %}
+{% block login %}
+    <body>
+    <h2>This is the OTP we need to match!!!!:{{ otp }}</h2>
+    <br>
+    <h1 align="center" style="color: red">Enter OTP</h1>
+    <form  action="" align="center">
+    {% csrf_token %}
+           <input  type="text" name="haii" >
+
+    <br>
+    <input type="submit" value="sumit">
+    </form>
+    </body>
+
+{% endblock %}

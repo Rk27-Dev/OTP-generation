@@ -1,0 +1,15 @@
+{% extends 'registration/base.html' %}
+{% block signup %}
+    <body>
+     <p id="demo">welcome to signup-page</p>
+    <script>
+document.getElementById('demo').innerHTML=Date();
+</script>
+
+    <form method="post" action=" ">
+    {% csrf_token %}
+   {{ form.as_p }}
+        <button type="submit" value="submit">signup</button>
+    </form></body>
+
+{% endblock %}

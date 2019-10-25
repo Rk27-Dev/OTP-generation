@@ -1,0 +1,9 @@
+{% extends 'registration/base.html' %}
+
+{% block content %}
+    <h1 style="color: green">vigits!!!:{% if user.is_authenticated  %}{{ user.username }}{% else %}vigitor{% endif %}
+    </h1><br>
+    <p>
+    <strong style="color: red">total user's registred!!!:{{ count }}</strong>
+    </p>
+{% endblock %}

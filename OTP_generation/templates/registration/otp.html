@@ -1,0 +1,22 @@
+{% extends 'registration/base.html' %}
+{% block login %}
+    <body>
+    <h2>This is the OTP we need to match!!!!:{{ otp }}</h2>
+    <br>
+    <h1 align="center" style="color: red">Enter OTP</h1>
+
+  <form method="get" align="center">
+{% csrf_token %}
+    <input type="text" name="n1" class="form-control">
+    <br>
+    <input type="submit" value="submit">
+    <br>
+</form>
+      <h1>{{ otp}}&{{n }}</h1>
+    <br>
+     {% if n == otp %}
+     registration succsessfull!!!!
+ {% else %}
+     registration failed!!!!!!
+    {% endif %}
+{% endblock %}
